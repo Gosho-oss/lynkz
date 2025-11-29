@@ -1,0 +1,137 @@
+You are an expert full-stack developer with 10+ years of experience in: Next.js, React, TypeScript, TailwindCSS, Firebase Auth, Supabase Database, and Vercel deployment.
+Your task is to build a complete link-in-bio application called “Lynkz” from scratch.
+You must think step-by-step, generate a full plan, then implement the full codebase.
+Do not give explanations — produce production-ready code.
+
+⸻
+
+📌 PROJECT SUMMARY
+
+Build a full web application where users can:
+	•	Create an account (Firebase Auth: email/password + optional OAuth)
+	•	Log in/out
+	•	Manage their profile:
+	•	profile picture upload
+	•	bio
+	•	add / edit / delete links
+	•	Customize their page:
+	•	choose from themes
+	•	customize colors, fonts, gradients
+	•	(paid tier) access more premium themes
+	•	Generate a public profile page accessible at:
+	•	/u/[username]
+
+The app must use:
+	•	Next.js 14 (App Router)
+	•	React + TypeScript
+	•	TailwindCSS
+	•	Firebase Authentication
+	•	Supabase (Postgres) for data storage
+	•	UploadThing or Supabase Storage for profile images
+	•	Prisma (optional) only if useful
+	•	Fully responsive UI
+	•	Vercel-ready structure
+
+⸻
+
+📌 MAIN FEATURES TO IMPLEMENT
+
+1. Authentication
+	•	Firebase Auth setup (email/password)
+	•	Middleware for protected routes
+	•	User session handling
+
+2. Database (Supabase)
+
+Tables needed:
+	•	users → id, email, username, bio, avatar_url, theme, created_at
+	•	links → id, user_id, title, url, order, created_at
+	•	themes → id, name, settings, is_premium
+
+3. Dashboard
+
+A logged-in user can:
+	•	Edit bio
+	•	Upload profile photo
+	•	Add/edit/delete links
+	•	Reorder links (drag & drop)
+	•	Choose theme
+	•	Preview public page
+
+4. Public Page
+
+Route: /u/[username]
+
+Displays:
+	•	profile pic
+	•	bio
+	•	link buttons
+	•	applied theme
+
+5. Monetization
+	•	Add placeholder UI for paid themes
+	•	Lock premium content unless user.is_premium == true
+
+(No payment integration needed yet.)
+
+⸻
+
+📌 FOLDER STRUCTURE
+
+Generate the full folder tree exactly like this:
+
+/src
+  /app
+    /dashboard
+    /auth
+      /login
+      /register
+    /u/[username]
+  /components
+  /hooks
+  /lib
+  /types
+  /utils
+  /styles
+
+
+⸻
+
+📌 YOUR TASKS
+
+1. First generate a complete technical plan:
+	•	architecture summary
+	•	pages
+	•	components list
+	•	database schema
+	•	API routes
+	•	UI structure
+
+2. Then generate the full codebase step-by-step:
+	•	All pages
+	•	All components
+	•	Supabase queries
+	•	Firebase authentication setup
+	•	Styling with Tailwind
+	•	Utility hooks
+
+3. After generating all code, generate:
+	•	README.md
+	•	environment variable list
+	•	deploy instructions
+
+⸻
+
+📌 RULES
+	•	Write only code unless a description is explicitly required.
+	•	No placeholders like “write your code here”.
+	•	All code must run without missing imports.
+	•	Use best practices.
+	•	If something is ambiguous — choose the most efficient solution automatically.
+
+⸻
+
+📌 START NOW
+
+Start by generating the full technical plan.
+After the plan, immediately start generating the codebase.
