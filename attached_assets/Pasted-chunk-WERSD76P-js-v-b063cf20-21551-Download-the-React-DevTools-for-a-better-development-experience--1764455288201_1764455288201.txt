@@ -1,0 +1,401 @@
+chunk-WERSD76P.js?v=b063cf20:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+AuthContext.tsx:41  GET https://1b5bb911-6d85-4c17-85bc-270cb2ada7b1-00-3n8hgzjfantuk.picard.replit.dev/api/users/me 401 (Unauthorized)
+syncUserWithDatabase @ AuthContext.tsx:41
+await in syncUserWithDatabase
+(anonymous) @ AuthContext.tsx:70
+(anonymous) @ firebase_auth.js?v=b063cf20:2758
+Promise.then
+registerStateListener @ firebase_auth.js?v=b063cf20:2754
+onAuthStateChanged @ firebase_auth.js?v=b063cf20:2614
+onAuthStateChanged @ firebase_auth.js?v=b063cf20:5133
+subscribeToAuthChanges @ firebase.ts:72
+(anonymous) @ AuthContext.tsx:67
+commitHookEffectListMount @ chunk-WERSD76P.js?v=b063cf20:16915
+commitPassiveMountOnFiber @ chunk-WERSD76P.js?v=b063cf20:18156
+commitPassiveMountEffects_complete @ chunk-WERSD76P.js?v=b063cf20:18129
+commitPassiveMountEffects_begin @ chunk-WERSD76P.js?v=b063cf20:18119
+commitPassiveMountEffects @ chunk-WERSD76P.js?v=b063cf20:18109
+flushPassiveEffectsImpl @ chunk-WERSD76P.js?v=b063cf20:19490
+flushPassiveEffects @ chunk-WERSD76P.js?v=b063cf20:19447
+performSyncWorkOnRoot @ chunk-WERSD76P.js?v=b063cf20:18868
+flushSyncCallbacks @ chunk-WERSD76P.js?v=b063cf20:9119
+commitRootImpl @ chunk-WERSD76P.js?v=b063cf20:19432
+commitRoot @ chunk-WERSD76P.js?v=b063cf20:19277
+finishConcurrentRender @ chunk-WERSD76P.js?v=b063cf20:18805
+performConcurrentWorkOnRoot @ chunk-WERSD76P.js?v=b063cf20:18718
+workLoop @ chunk-WERSD76P.js?v=b063cf20:197
+flushWork @ chunk-WERSD76P.js?v=b063cf20:176
+performWorkUntilDeadline @ chunk-WERSD76P.js?v=b063cf20:384
+firebase.ts:31 Cross-Origin-Opener-Policy policy would block the window.closed call.
+poll @ firebase_auth.js?v=b063cf20:7084
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+pollUserCancellation @ firebase_auth.js?v=b063cf20:7101
+onExecution @ firebase_auth.js?v=b063cf20:7057
+await in onExecution
+(anonymous) @ firebase_auth.js?v=b063cf20:6909
+await in (anonymous)
+execute @ firebase_auth.js?v=b063cf20:6905
+executeNotNull @ firebase_auth.js?v=b063cf20:7025
+signInWithPopup @ firebase_auth.js?v=b063cf20:6990
+signInWithGoogle @ firebase.ts:31
+handleSignInWithGoogle @ AuthContext.tsx:83
+handleGoogleSignIn @ Register.tsx:85
+callCallback2 @ chunk-WERSD76P.js?v=b063cf20:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=b063cf20:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=b063cf20:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=b063cf20:3736
+executeDispatch @ chunk-WERSD76P.js?v=b063cf20:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=b063cf20:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=b063cf20:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=b063cf20:7051
+(anonymous) @ chunk-WERSD76P.js?v=b063cf20:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=b063cf20:18913
+batchedUpdates @ chunk-WERSD76P.js?v=b063cf20:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=b063cf20:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=b063cf20:5478
+dispatchEvent @ chunk-WERSD76P.js?v=b063cf20:5472
+dispatchDiscreteEvent @ chunk-WERSD76P.js?v=b063cf20:5449
+firebase.ts:31 Cross-Origin-Opener-Policy policy would block the window.closed call.
+poll @ firebase_auth.js?v=b063cf20:7084
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+pollUserCancellation @ firebase_auth.js?v=b063cf20:7101
+onExecution @ firebase_auth.js?v=b063cf20:7057
+await in onExecution
+(anonymous) @ firebase_auth.js?v=b063cf20:6909
+await in (anonymous)
+execute @ firebase_auth.js?v=b063cf20:6905
+executeNotNull @ firebase_auth.js?v=b063cf20:7025
+signInWithPopup @ firebase_auth.js?v=b063cf20:6990
+signInWithGoogle @ firebase.ts:31
+handleSignInWithGoogle @ AuthContext.tsx:83
+handleGoogleSignIn @ Register.tsx:85
+callCallback2 @ chunk-WERSD76P.js?v=b063cf20:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=b063cf20:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=b063cf20:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=b063cf20:3736
+executeDispatch @ chunk-WERSD76P.js?v=b063cf20:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=b063cf20:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=b063cf20:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=b063cf20:7051
+(anonymous) @ chunk-WERSD76P.js?v=b063cf20:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=b063cf20:18913
+batchedUpdates @ chunk-WERSD76P.js?v=b063cf20:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=b063cf20:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=b063cf20:5478
+dispatchEvent @ chunk-WERSD76P.js?v=b063cf20:5472
+dispatchDiscreteEvent @ chunk-WERSD76P.js?v=b063cf20:5449
+firebase.ts:31 Cross-Origin-Opener-Policy policy would block the window.closed call.
+poll @ firebase_auth.js?v=b063cf20:7084
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+pollUserCancellation @ firebase_auth.js?v=b063cf20:7101
+onExecution @ firebase_auth.js?v=b063cf20:7057
+await in onExecution
+(anonymous) @ firebase_auth.js?v=b063cf20:6909
+await in (anonymous)
+execute @ firebase_auth.js?v=b063cf20:6905
+executeNotNull @ firebase_auth.js?v=b063cf20:7025
+signInWithPopup @ firebase_auth.js?v=b063cf20:6990
+signInWithGoogle @ firebase.ts:31
+handleSignInWithGoogle @ AuthContext.tsx:83
+handleGoogleSignIn @ Register.tsx:85
+callCallback2 @ chunk-WERSD76P.js?v=b063cf20:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=b063cf20:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=b063cf20:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=b063cf20:3736
+executeDispatch @ chunk-WERSD76P.js?v=b063cf20:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=b063cf20:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=b063cf20:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=b063cf20:7051
+(anonymous) @ chunk-WERSD76P.js?v=b063cf20:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=b063cf20:18913
+batchedUpdates @ chunk-WERSD76P.js?v=b063cf20:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=b063cf20:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=b063cf20:5478
+dispatchEvent @ chunk-WERSD76P.js?v=b063cf20:5472
+dispatchDiscreteEvent @ chunk-WERSD76P.js?v=b063cf20:5449
+firebase.ts:31 Cross-Origin-Opener-Policy policy would block the window.closed call.
+poll @ firebase_auth.js?v=b063cf20:7084
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+pollUserCancellation @ firebase_auth.js?v=b063cf20:7101
+onExecution @ firebase_auth.js?v=b063cf20:7057
+await in onExecution
+(anonymous) @ firebase_auth.js?v=b063cf20:6909
+await in (anonymous)
+execute @ firebase_auth.js?v=b063cf20:6905
+executeNotNull @ firebase_auth.js?v=b063cf20:7025
+signInWithPopup @ firebase_auth.js?v=b063cf20:6990
+signInWithGoogle @ firebase.ts:31
+handleSignInWithGoogle @ AuthContext.tsx:83
+handleGoogleSignIn @ Register.tsx:85
+callCallback2 @ chunk-WERSD76P.js?v=b063cf20:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=b063cf20:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=b063cf20:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=b063cf20:3736
+executeDispatch @ chunk-WERSD76P.js?v=b063cf20:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=b063cf20:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=b063cf20:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=b063cf20:7051
+(anonymous) @ chunk-WERSD76P.js?v=b063cf20:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=b063cf20:18913
+batchedUpdates @ chunk-WERSD76P.js?v=b063cf20:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=b063cf20:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=b063cf20:5478
+dispatchEvent @ chunk-WERSD76P.js?v=b063cf20:5472
+dispatchDiscreteEvent @ chunk-WERSD76P.js?v=b063cf20:5449
+firebase.ts:31 Cross-Origin-Opener-Policy policy would block the window.closed call.
+poll @ firebase_auth.js?v=b063cf20:7084
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+pollUserCancellation @ firebase_auth.js?v=b063cf20:7101
+onExecution @ firebase_auth.js?v=b063cf20:7057
+await in onExecution
+(anonymous) @ firebase_auth.js?v=b063cf20:6909
+await in (anonymous)
+execute @ firebase_auth.js?v=b063cf20:6905
+executeNotNull @ firebase_auth.js?v=b063cf20:7025
+signInWithPopup @ firebase_auth.js?v=b063cf20:6990
+signInWithGoogle @ firebase.ts:31
+handleSignInWithGoogle @ AuthContext.tsx:83
+handleGoogleSignIn @ Register.tsx:85
+callCallback2 @ chunk-WERSD76P.js?v=b063cf20:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=b063cf20:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=b063cf20:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=b063cf20:3736
+executeDispatch @ chunk-WERSD76P.js?v=b063cf20:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=b063cf20:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=b063cf20:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=b063cf20:7051
+(anonymous) @ chunk-WERSD76P.js?v=b063cf20:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=b063cf20:18913
+batchedUpdates @ chunk-WERSD76P.js?v=b063cf20:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=b063cf20:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=b063cf20:5478
+dispatchEvent @ chunk-WERSD76P.js?v=b063cf20:5472
+dispatchDiscreteEvent @ chunk-WERSD76P.js?v=b063cf20:5449
+firebase.ts:31 Cross-Origin-Opener-Policy policy would block the window.closed call.
+poll @ firebase_auth.js?v=b063cf20:7084
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+setTimeout
+poll @ firebase_auth.js?v=b063cf20:7099
+pollUserCancellation @ firebase_auth.js?v=b063cf20:7101
+onExecution @ firebase_auth.js?v=b063cf20:7057
+await in onExecution
+(anonymous) @ firebase_auth.js?v=b063cf20:6909
+await in (anonymous)
+execute @ firebase_auth.js?v=b063cf20:6905
+executeNotNull @ firebase_auth.js?v=b063cf20:7025
+signInWithPopup @ firebase_auth.js?v=b063cf20:6990
+signInWithGoogle @ firebase.ts:31
+handleSignInWithGoogle @ AuthContext.tsx:83
+handleGoogleSignIn @ Register.tsx:85
+callCallback2 @ chunk-WERSD76P.js?v=b063cf20:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=b063cf20:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=b063cf20:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=b063cf20:3736
+executeDispatch @ chunk-WERSD76P.js?v=b063cf20:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=b063cf20:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=b063cf20:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=b063cf20:7051
+(anonymous) @ chunk-WERSD76P.js?v=b063cf20:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=b063cf20:18913
+batchedUpdates @ chunk-WERSD76P.js?v=b063cf20:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=b063cf20:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=b063cf20:5478
+dispatchEvent @ chunk-WERSD76P.js?v=b063cf20:5472
+dispatchDiscreteEvent @ chunk-WERSD76P.js?v=b063cf20:5449
+AuthContext.tsx:41  GET https://1b5bb911-6d85-4c17-85bc-270cb2ada7b1-00-3n8hgzjfantuk.picard.replit.dev/api/users/me 401 (Unauthorized)
+syncUserWithDatabase @ AuthContext.tsx:41
+await in syncUserWithDatabase
+handleSignInWithGoogle @ AuthContext.tsx:84
+await in handleSignInWithGoogle
+handleGoogleSignIn @ Register.tsx:85
+callCallback2 @ chunk-WERSD76P.js?v=b063cf20:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=b063cf20:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=b063cf20:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=b063cf20:3736
+executeDispatch @ chunk-WERSD76P.js?v=b063cf20:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=b063cf20:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=b063cf20:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=b063cf20:7051
+(anonymous) @ chunk-WERSD76P.js?v=b063cf20:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=b063cf20:18913
+batchedUpdates @ chunk-WERSD76P.js?v=b063cf20:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=b063cf20:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=b063cf20:5478
+dispatchEvent @ chunk-WERSD76P.js?v=b063cf20:5472
+dispatchDiscreteEvent @ chunk-WERSD76P.js?v=b063cf20:5449
+completion_list.html?username=&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.06000000…:14  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.06000000…:12  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.06000000…:13  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Go&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.060000…:12  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Go&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.060000…:13  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Go&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.060000…:14  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Gos&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.06000…:12  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Gos&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.06000…:13  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Gos&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.06000…:14  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Gosh&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.0600…:12  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Gosh&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.0600…:13  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Gosh&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.0600…:14  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshk&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.060…:12  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshk&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.060…:13  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshk&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.060…:14  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshka&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.06…:12  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshka&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.06…:13  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshka&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.06…:14  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshkat&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.0…:12  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshkat&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.0…:13  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshkat&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.0…:14  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js net::ERR_FILE_NOT_FOUND
+chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js:1  Failed to load resource: net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshkata&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.…:13  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/extensionState.js net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshkata&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.…:14  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/heuristicsRedefinitions.js net::ERR_FILE_NOT_FOUND
+completion_list.html?username=Goshkata&colorScheme=&screenX=0&screenY=34&effectiveWindowWidth=1512.…:12  GET chrome-extension://pejdijmoenmkgeppbflobdenhhabjlaj/utils.js net::ERR_FILE_NOT_FOUND
+SetupUsername.tsx:60  POST https://1b5bb911-6d85-4c17-85bc-270cb2ada7b1-00-3n8hgzjfantuk.picard.replit.dev/api/users 401 (Unauthorized)
+onSubmit @ SetupUsername.tsx:60
+await in onSubmit
+(anonymous) @ chunk-CXJMC5RA.js?v=b063cf20:1465
+await in (anonymous)
+callCallback2 @ chunk-WERSD76P.js?v=b063cf20:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=b063cf20:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=b063cf20:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=b063cf20:3736
+executeDispatch @ chunk-WERSD76P.js?v=b063cf20:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=b063cf20:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=b063cf20:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=b063cf20:7051
+(anonymous) @ chunk-WERSD76P.js?v=b063cf20:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=b063cf20:18913
+batchedUpdates @ chunk-WERSD76P.js?v=b063cf20:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=b063cf20:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=b063cf20:5478
+dispatchEvent @ chunk-WERSD76P.js?v=b063cf20:5472
+dispatchDiscreteEvent @ chunk-WERSD76P.js?v=b063cf20:5449

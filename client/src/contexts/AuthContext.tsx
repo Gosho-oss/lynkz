@@ -48,6 +48,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       } else if (response.status === 404) {
         // User doesn't exist, will need to complete registration
         setUser(null);
+      } else if (response.status === 401) {
+        // Unauthorized - token issue, but still keep Firebase user logged in
+        console.error("Token rejected by server, user needs to register");
+        setUser(null);
       }
     } catch (error) {
       console.error("Error syncing user:", error);
