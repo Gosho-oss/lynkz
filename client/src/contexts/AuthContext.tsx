@@ -10,7 +10,7 @@ import {
   handleRedirectResult,
   type FirebaseUser 
 } from "@/lib/firebase";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest, setAuthToken } from "@/lib/queryClient";
 import type { User } from "@shared/schema";
 
 interface AuthContextType {
@@ -36,6 +36,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const syncUserWithDatabase = async (fbUser: FirebaseUser) => {
     try {
       const token = await fbUser.getIdToken();
+      setAuthToken(token);
       
       // Try to get existing user
       const response = await fetch("/api/users/me", {
@@ -133,6 +134,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const handleSignOut = async () => {
     await logOut();
+    setAuthToken(null);
     setUser(null);
   };
 

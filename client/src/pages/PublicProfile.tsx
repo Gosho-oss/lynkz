@@ -46,8 +46,8 @@ export default function PublicProfilePage() {
           <p className="text-muted-foreground mb-6">
             The profile you're looking for doesn't exist.
           </p>
-          <Link href="/">
-            <a className="text-primary hover:underline">Go back home</a>
+          <Link href="/" className="text-primary hover:underline">
+            Go back home
           </Link>
         </div>
       </div>
@@ -135,16 +135,15 @@ export default function PublicProfilePage() {
 
       {/* Footer */}
       <footer className="py-8 text-center">
-        <Link href="/">
-          <a 
-            className="inline-flex items-center gap-2 text-sm opacity-60 hover:opacity-100 transition-opacity"
-            style={{ color: settings.textColor }}
-          >
-            <div className="w-5 h-5 rounded bg-white/20 flex items-center justify-center">
-              <Link2 className="w-3 h-3" style={{ color: settings.textColor }} />
-            </div>
-            Powered by Lynkz
-          </a>
+        <Link 
+          href="/"
+          className="inline-flex items-center gap-2 text-sm opacity-60 hover:opacity-100 transition-opacity"
+          style={{ color: settings.textColor }}
+        >
+          <div className="w-5 h-5 rounded bg-white/20 flex items-center justify-center">
+            <Link2 className="w-3 h-3" style={{ color: settings.textColor }} />
+          </div>
+          Powered by Lynkz
         </Link>
       </footer>
     </div>
