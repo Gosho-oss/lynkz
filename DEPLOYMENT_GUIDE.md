@@ -35,9 +35,13 @@ git push -u origin main
 3. **Configure Build Settings:**
    - Framework Preset: **Other**
    - Build Command: `npm run build`
-   - Output Directory: `dist`
+   - Output Directory: **Leave empty** (Vercel will use dist/)
    - Install Command: `npm install`
    - Root Directory: `./`
+   
+   **Important:** Make sure to click "Override" if needed and set:
+   - Build Command: `npm run build`
+   - Leave Output Directory **empty**
 
 ---
 
