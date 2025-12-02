@@ -63,7 +63,8 @@ export default function ThemeSelector({
   };
 
   // Separate free and premium themes
-  const freeThemes = allThemes.filter((t) => !t.isPremium);
+  const freeThemes = allThemes.filter((t) => !t.isPremium && (!t.settings.requiredTier || t.settings.requiredTier === 'free'));
+  const starterThemes = allThemes.filter((t) => !t.isPremium && t.settings.requiredTier === 'starter');
   const premiumThemes = allThemes.filter((t) => t.isPremium);
 
   return (
@@ -103,6 +104,31 @@ export default function ThemeSelector({
                 </div>
               </div>
 
+              {/* Starter Pack Themes */}
+              {starterThemes.length > 0 && (
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-4 h-4 rounded bg-gradient-to-r from-blue-500 to-cyan-500" />
+                    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                      Starter Pack Themes
+                    </h3>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    {starterThemes.map((theme) => (
+                      <ThemeCard
+                        key={theme.id}
+                        theme={theme}
+                        isSelected={currentThemeId === theme.id}
+                        isLocked={false}
+                        tierBadge="starter"
+                        onClick={() => handleSelectTheme(theme)}
+                        isUpdating={updateThemeMutation.isPending}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Premium Themes */}
               {premiumThemes.length > 0 && (
                 <div>
@@ -119,6 +145,7 @@ export default function ThemeSelector({
                         theme={theme}
                         isSelected={currentThemeId === theme.id}
                         isLocked={!isPremium}
+                        tierBadge="premium"
                         onClick={() => handleSelectTheme(theme)}
                         isUpdating={updateThemeMutation.isPending}
                       />
@@ -161,9 +188,10 @@ interface ThemeCardProps {
   isLocked: boolean;
   onClick: () => void;
   isUpdating: boolean;
+  tierBadge?: "starter" | "premium";
 }
 
-function ThemeCard({ theme, isSelected, isLocked, onClick, isUpdating }: ThemeCardProps) {
+function ThemeCard({ theme, isSelected, isLocked, onClick, isUpdating, tierBadge }: ThemeCardProps) {
   const settings = theme.settings as ThemeSettings;
   const background = getThemeBackground(settings);
 
@@ -219,7 +247,7 @@ function ThemeCard({ theme, isSelected, isLocked, onClick, isUpdating }: ThemeCa
 
       {/* Selected indicator */}
       {isSelected && (
-        <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+        <div className="absolute bottom-2 right-2 w-5 h-5 rounded-full bg-primary flex items-center justify-center">
           <Check className="w-3 h-3 text-primary-foreground" />
         </div>
       )}
@@ -241,11 +269,29 @@ function ThemeCard({ theme, isSelected, isLocked, onClick, isUpdating }: ThemeCa
       </div>
 
       {/* Premium badge */}
-      {theme.isPremium && (
+      {theme.isPremium && tierBadge === "premium" && (
         <div className="absolute top-2 left-2">
           <Badge className="text-[10px] bg-gradient-to-r from-amber-500 to-orange-500 border-0 text-white px-1.5 py-0.5">
             PRO
           </Badge>
+        </div>
+      )}
+      
+      {/* Starter badge */}
+      {tierBadge === "starter" && (
+        <div className="absolute top-2 left-2">
+          <Badge className="text-[10px] bg-gradient-to-r from-blue-500 to-cyan-500 border-0 text-white px-1.5 py-0.5">
+            STARTER
+          </Badge>
+        </div>
+      )}
+      
+      {/* Animation indicator */}
+      {settings.animations && (
+        <div className="absolute top-2 right-2">
+          <div className="w-5 h-5 rounded-full bg-purple-500/80 flex items-center justify-center" title="Animated">
+            <Sparkles className="w-3 h-3 text-white" />
+          </div>
         </div>
       )}
     </button>

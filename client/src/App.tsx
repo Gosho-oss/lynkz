@@ -8,6 +8,7 @@ import Landing from "@/pages/Landing";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
 import Dashboard from "@/pages/Dashboard";
+import AdminDashboard from "@/pages/AdminDashboard";
 import PublicProfile from "@/pages/PublicProfile";
 import NotFound from "@/pages/not-found";
 

@@ -2,11 +2,13 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { verifyFirebaseToken, getFirebaseUser } from "./auth";
+import { verifyAdminAccess, isAdminEmail } from "./admin-auth";
 import { insertUserSchema, insertLinkSchema, updateUserSchema, updateLinkSchema } from "@shared/schema";
 import { defaultThemes } from "../client/src/lib/themes";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import QRCode from "qrcode";
 
 // Configure multer for file uploads
 const uploadDir = path.join(process.cwd(), "uploads", "avatars");
@@ -166,7 +168,11 @@ export async function registerRoutes(
         ...result.data,
         firebaseUid: firebaseUser.uid,
         themeId: "minimal",
+        role: isAdminEmail(result.data.email) ? "admin" : "user",
       });
+      
+      // Update last login
+      await storage.updateLastLogin(user.id);
       
       res.status(201).json(user);
     } catch (error) {
@@ -187,6 +193,9 @@ export async function registerRoutes(
       if (!user) {
         return res.status(404).json({ message: "User not found" });
       }
+      
+      // Update last login
+      await storage.updateLastLogin(user.id);
       
       res.json(user);
     } catch (error) {
@@ -414,6 +423,147 @@ export async function registerRoutes(
       res.json({ success: true });
     } catch (error) {
       console.error("Error reordering links:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+  // ==================== ADMIN ROUTES ====================
+
+  // Verify admin password (doesn't require Firebase auth)
+  app.post("/api/admin/verify", async (req, res) => {
+    try {
+      const { password } = req.body;
+      const { verifyAdminPassword } = await import("./admin-auth");
+      
+      if (verifyAdminPassword(password)) {
+        res.json({ valid: true });
+      } else {
+        res.status(403).json({ valid: false, message: "Invalid admin password" });
+      }
+    } catch (error) {
+      console.error("Error verifying admin password:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+  // Get all users (admin only)
+  app.get("/api/admin/users", verifyFirebaseToken, verifyAdminAccess, async (req, res) => {
+    try {
+      const users = await storage.getAllUsers();
+      res.json(users);
+    } catch (error) {
+      console.error("Error fetching all users:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+  // Get user by ID (admin only)
+  app.get("/api/admin/users/:id", verifyFirebaseToken, verifyAdminAccess, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const user = await storage.getUser(id);
+      
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+      
+      // Get user's links
+      const links = await storage.getLinksByUserId(id);
+      
+      res.json({ ...user, links });
+    } catch (error) {
+      console.error("Error fetching user:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+  // Update user subscription (admin only)
+  app.patch("/api/admin/users/:id/subscription", verifyFirebaseToken, verifyAdminAccess, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { subscriptionTier, isPremium } = req.body;
+      
+      if (!subscriptionTier || !['free', 'starter', 'premium'].includes(subscriptionTier)) {
+        return res.status(400).json({ message: "Invalid subscription tier" });
+      }
+      
+      const updatedUser = await storage.updateUser(id, {
+        subscriptionTier,
+        isPremium: subscriptionTier === 'premium' || subscriptionTier === 'starter',
+      });
+      
+      if (!updatedUser) {
+        return res.status(404).json({ message: "User not found" });
+      }
+      
+      res.json(updatedUser);
+    } catch (error) {
+      console.error("Error updating user subscription:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+  // Delete user (admin only)
+  app.delete("/api/admin/users/:id", verifyFirebaseToken, verifyAdminAccess, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const user = await storage.getUser(id);
+      
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+      
+      // Prevent admin from deleting themselves
+      const firebaseUser = getFirebaseUser(req);
+      const currentUser = await storage.getUserByFirebaseUid(firebaseUser!.uid);
+      if (currentUser?.id === id) {
+        return res.status(400).json({ message: "Cannot delete your own account" });
+      }
+      
+      // Delete user's avatar if exists
+      if (user.avatarUrl && user.avatarUrl.startsWith("/uploads/")) {
+        const avatarPath = path.join(process.cwd(), user.avatarUrl);
+        if (fs.existsSync(avatarPath)) {
+          fs.unlinkSync(avatarPath);
+        }
+      }
+      
+      await storage.deleteUser(id);
+      res.status(204).send();
+    } catch (error) {
+      console.error("Error deleting user:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+  // ==================== QR CODE GENERATION ====================
+
+  // Generate QR code for user profile
+  app.get("/api/qr/:username", async (req, res) => {
+    try {
+      const { username } = req.params;
+      const user = await storage.getUserByUsername(username);
+      
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+      
+      // Generate profile URL
+      const profileUrl = `${req.protocol}://${req.get('host')}/u/${username}`;
+      
+      // Generate QR code as data URL
+      const qrCodeDataUrl = await QRCode.toDataURL(profileUrl, {
+        width: 400,
+        margin: 2,
+        color: {
+          dark: '#000000',
+          light: '#FFFFFF'
+        }
+      });
+      
+      res.json({ qrCode: qrCodeDataUrl, profileUrl });
+    } catch (error) {
+      console.error("Error generating QR code:", error);
       res.status(500).json({ message: "Server error" });
     }
   });

@@ -6,6 +6,7 @@ import { Link2, ExternalLink } from "lucide-react";
 import type { PublicProfile, ThemeSettings } from "@shared/schema";
 import { getThemeBackground, getButtonStyles, defaultThemes } from "@/lib/themes";
 import { Link } from "wouter";
+import "../lib/animations.css";
 
 export default function PublicProfilePage() {
   const [match, params] = useRoute("/u/:username");
@@ -59,13 +60,39 @@ export default function PublicProfilePage() {
   const settings: ThemeSettings = theme?.settings as ThemeSettings || defaultThemes[0].settings;
   const background = getThemeBackground(settings);
   const buttonStyles = getButtonStyles(settings);
+  const animations = settings.animations;
+
+  // Animation class names
+  const getAnimationClasses = () => {
+    if (!animations) return '';
+    const classes = [];
+    if (animations.backgroundAnimation === 'gradient-shift') classes.push('bg-gradient-shift');
+    if (animations.backgroundAnimation === 'particles') classes.push('bg-particles');
+    if (animations.entranceAnimation) classes.push(`entrance-${animations.entranceAnimation}`);
+    return classes.join(' ');
+  };
+
+  const getButtonAnimationClasses = () => {
+    if (!animations) return 'transition-all hover:scale-[1.02] active:scale-[0.98]';
+    const classes = [];
+    if (animations.buttonHover && animations.buttonHover !== 'none') {
+      classes.push(`btn-hover-${animations.buttonHover}`);
+    }
+    if (animations.buttonTransition && animations.buttonTransition !== 'none') {
+      classes.push(`btn-transition-${animations.buttonTransition}`);
+    }
+    if (!classes.length) {
+      classes.push('transition-all hover:scale-[1.02]');
+    }
+    return classes.join(' ');
+  };
 
   // Sort links by order
   const sortedLinks = [...(profile.links || [])].sort((a, b) => a.orderIndex - b.orderIndex);
 
   return (
     <div
-      className="min-h-screen flex flex-col"
+      className={`min-h-screen flex flex-col ${getAnimationClasses()}`}
       style={{ background, fontFamily: settings.fontFamily }}
     >
       {/* Main Content */}
@@ -107,13 +134,13 @@ export default function PublicProfilePage() {
           {/* Links */}
           <div className="w-full space-y-3">
             {sortedLinks.length > 0 ? (
-              sortedLinks.map((link) => (
+              sortedLinks.map((link, index) => (
                 <a
                   key={link.id}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full h-14 px-6 flex items-center justify-center text-base font-medium transition-all hover:scale-[1.02] active:scale-[0.98] ${settings.buttonShape}`}
+                  className={`w-full h-14 px-6 flex items-center justify-center text-base font-medium ${settings.buttonShape} ${getButtonAnimationClasses()} ${animations?.entranceAnimation ? 'stagger-item' : ''}`}
                   style={buttonStyles}
                   data-testid={`public-link-${link.id}`}
                 >

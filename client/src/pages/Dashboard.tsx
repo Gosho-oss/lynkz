@@ -28,6 +28,8 @@ import {
   ExternalLink,
   Eye,
   LayoutDashboard,
+  Crown,
+  Sparkles,
 } from "lucide-react";
 import type { User as UserType, Link as LinkType, Theme } from "@shared/schema";
 import ProfileEditor from "@/components/dashboard/ProfileEditor";
@@ -35,6 +37,9 @@ import LinkManager from "@/components/dashboard/LinkManager";
 import ThemeSelector from "@/components/dashboard/ThemeSelector";
 import ProfilePreview from "@/components/dashboard/ProfilePreview";
 import SetupUsername from "@/components/dashboard/SetupUsername";
+import AdminSwitcher from "@/components/dashboard/AdminSwitcher";
+import AdminDashboard from "@/pages/AdminDashboard";
+import QRCodeDialog from "@/components/dashboard/QRCodeDialog";
 
 type DashboardTab = "profile" | "links" | "themes" | "settings";
 
@@ -43,6 +48,8 @@ export default function Dashboard() {
   const { user, firebaseUser, loading, signOut, refreshUser } = useAuth();
   const [activeTab, setActiveTab] = useState<DashboardTab>("links");
   const [showPreview, setShowPreview] = useState(false);
+  const [isAdminMode, setIsAdminMode] = useState(false);
+  const [adminPassword, setAdminPassword] = useState("");
 
   // Fetch user's links
   const { data: links = [], isLoading: linksLoading, refetch: refetchLinks } = useQuery<LinkType[]>({
@@ -58,6 +65,11 @@ export default function Dashboard() {
 
   // Find current theme
   const currentTheme = themes.find((t) => t.id === user?.themeId) || themes[0];
+
+  const handleAdminModeChange = (enabled: boolean, password: string) => {
+    setIsAdminMode(enabled);
+    setAdminPassword(password);
+  };
 
   const handleSignOut = async () => {
     await signOut();
@@ -87,6 +99,16 @@ export default function Dashboard() {
   // Need to set up username (for Google OAuth users)
   if (firebaseUser && !user) {
     return <SetupUsername firebaseUser={firebaseUser} onComplete={refreshUser} />;
+  }
+
+  // Show admin dashboard if in admin mode
+  if (isAdminMode && user?.role === "admin") {
+    return (
+      <AdminDashboard 
+        adminPassword={adminPassword} 
+        onBack={() => setIsAdminMode(false)} 
+      />
+    );
   }
 
   const sidebarStyle = {
@@ -140,6 +162,34 @@ export default function Dashboard() {
           </SidebarContent>
 
           <SidebarFooter className="p-4 border-t border-sidebar-border">
+            {user && (user.subscriptionTier === 'starter' || user.subscriptionTier === 'premium') && (
+              <div className="mb-3 px-3 py-2 rounded-lg bg-gradient-to-r from-orange-500/10 to-yellow-500/10 border border-orange-500/20">
+                <div className="flex items-center gap-2">
+                  {user.subscriptionTier === 'premium' ? (
+                    <Crown className="w-4 h-4 text-orange-500" />
+                  ) : (
+                    <Sparkles className="w-4 h-4 text-yellow-500" />
+                  )}
+                  <span className="text-sm font-medium">
+                    {user.subscriptionTier === 'premium' ? 'Premium' : 'Starter'}
+                  </span>
+                </div>
+              </div>
+            )}
+            {user && user.subscriptionTier === 'free' && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full mb-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 hover:from-orange-600 hover:to-yellow-600"
+                onClick={() => {
+                  // Placeholder for Stripe upgrade
+                  alert('Upgrade to Premium!\n\nStripe integration coming soon...\n\nPremium features:\n• Custom themes\n• Advanced analytics\n• Priority support\n• Remove branding');
+                }}
+              >
+                <Crown className="w-4 h-4 mr-2" />
+                Upgrade to Premium
+              </Button>
+            )}
             <div className="flex items-center gap-3 mb-4">
               <Avatar className="w-10 h-10">
                 <AvatarImage src={user?.avatarUrl || undefined} alt={user?.displayName || user?.username} />
@@ -174,6 +224,16 @@ export default function Dashboard() {
               <h1 className="text-lg font-semibold capitalize">{activeTab}</h1>
             </div>
             <div className="flex items-center gap-2">
+              {user?.role === "admin" && (
+                <AdminSwitcher
+                  isAdmin={user.role === "admin"}
+                  onAdminModeChange={handleAdminModeChange}
+                  isAdminMode={isAdminMode}
+                />
+              )}
+              {user?.username && (
+                <QRCodeDialog username={user.username} />
+              )}
               <Button 
                 variant="outline" 
                 size="sm" 

@@ -15,6 +15,9 @@ export const users = pgTable("users", {
   avatarUrl: text("avatar_url"),
   themeId: varchar("theme_id", { length: 36 }),
   isPremium: boolean("is_premium").default(false),
+  role: varchar("role", { length: 20 }).default("user").notNull(), // 'user' or 'admin'
+  subscriptionTier: varchar("subscription_tier", { length: 20 }).default("free").notNull(), // 'free', 'starter', or 'premium'
+  lastLoginAt: timestamp("last_login_at"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -49,12 +52,21 @@ export interface ThemeSettings {
   gradientDirection?: string;
   textColor: string;
   buttonStyle: "filled" | "outlined" | "soft";
-  buttonShape: "rounded-full" | "rounded-xl" | "rounded-lg";
+  buttonShape: "rounded-full" | "rounded-xl" | "rounded-lg" | "rounded-none";
   buttonBackground: string;
   buttonTextColor: string;
   buttonBorderColor?: string;
   fontFamily: string;
   accentColor: string;
+  // Animation settings (premium only)
+  animations?: {
+    buttonHover?: "scale" | "glow" | "lift" | "shimmer" | "none";
+    buttonTransition?: "smooth" | "bouncy" | "none";
+    entranceAnimation?: "fade" | "slide" | "zoom" | "none";
+    backgroundAnimation?: "gradient-shift" | "particles" | "none";
+  };
+  // Subscription tier required
+  requiredTier?: "free" | "starter" | "premium";
 }
 
 // Relations
