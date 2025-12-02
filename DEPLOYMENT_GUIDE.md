@@ -14,7 +14,7 @@ git commit -m "Initial commit - ready for deployment"
    - Name it: `lynkz` (or your preferred name)
    - Push your code:
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/lynkz.git
+git remote add origin https://github.com/Gosho-oss/lynkz.git
 git branch -M main
 git push -u origin main
 ```
